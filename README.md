@@ -1,6 +1,15 @@
 # webrtc-samples
 sample HTML and JavaScript code for WebRTC
 
+# Prerequisites
+
+install node.js then add node static using npm.
+
+https://nodejs.org/en/download/
+
+https://www.npmjs.com/package/node-static
+
+
 # projects
 
 we have several projects in this repo.
