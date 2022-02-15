@@ -1,5 +1,7 @@
+'use strict';
+
 var connection = new WebSocket('ws://localhost:8888'),
-    name = "";
+    username = "";
 
 var loginPage = document.querySelector('#login-page'),
     usernameInput = document.querySelector('#username'),
@@ -13,12 +15,12 @@ callPage.style.display = "none";
 
 // Login when the user clicks the button
 loginButton.addEventListener("click", function (event) {
-  name = usernameInput.value;
+  username = usernameInput.value;
 
-  if (name.length > 0) {
+  if (username.length > 0) {
     send({
       type: "login",
-      name: name
+      name: username
     });
   }
 });
@@ -88,11 +90,14 @@ callButton.addEventListener("click", function () {
 });
 
 hangUpButton.addEventListener("click", function () {
-  send({
-    type: "leave"
-  });
 
-  onLeave();
+  if (connectedUser) {
+    send({
+      type: "leave"
+    });
+
+    onLeave();
+  }
 });
 
 function onOffer(offer, name) {
