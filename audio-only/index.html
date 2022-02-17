@@ -13,7 +13,6 @@
     <meta name="description" content="WebRTC code samples">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
     <meta itemprop="description" content="Client-side WebRTC code samples">
-    <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
     <meta itemprop="name" content="WebRTC code samples">
     <meta name="mobile-web-app-capable" content="yes">
     <meta id="theme-color" name="theme-color" content="#ffffff">
@@ -22,10 +21,7 @@
 
     <title>Peer connection: audio only</title>
 
-    <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../../../css/main.css"/>
+    <link rel="stylesheet" href="css/global.css"/>
     <link rel="stylesheet" href="css/main.css"/>
 
 </head>
@@ -34,7 +30,7 @@
 
 <div id="container">
 
-    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a> <span>Peer connection: audio only</span>
+    <h1><span>Peer connection: audio only</span>
     </h1>
 
     <div id="audio">
@@ -78,10 +74,8 @@
         <canvas id="audioLevelCanvas"></canvas>
     </div>
 
-    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/peerconnection/audio"
-       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
 </div>
-<table>
+<!-- <table>
     <caption>Bitrate and Packes sent per second - approximate results in browsers</caption>
     <tr>
         <th>Opus</th>
@@ -97,12 +91,11 @@
         <td>~70 kbps / Muted : Same, ~55 Packets, Muted : Same</td>
         <td>Tested in Chrome, Not tested in Opera, Firefox, Safari, Edge</td>
     </tr>
-</table>
+</table> -->
 <hr>
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 <script src="js/main.js"></script>
-<script src="../../../js/third_party/graph.js"></script>
+<script src="js/graph.js"></script>
 
-<script src="../../../js/lib/ga.js"></script>
 </body>
 </html>
