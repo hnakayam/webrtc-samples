@@ -45,7 +45,7 @@ all sub directory demo can be used with node.js "static" web service. change cur
 
 to start web server, then open http://localhost:8080/ by WebRTC enabled Web browser (chrome recommended).
 
-#note 
+# Note 
 
 last 2 demos ("client" and "client_old") requires simple signaling server outside of the browser.
 
