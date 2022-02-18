@@ -19,7 +19,7 @@ or
 
 to start local web server.
 
-# projects
+# Projects
 
 we have several projects in sub directories.
 
