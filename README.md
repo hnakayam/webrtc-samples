@@ -11,34 +11,55 @@ https://www.npmjs.com/package/node-static
 
 start "static" web service by 
 
-static .
+> static .
 
 or
 
-static -c "no-cache" .
+> static -c 0 .
 
-to server local web server.
+to start local web server.
 
 # projects
 
-we have several projects in this repo.
+we have several projects in sub directories.
 
-- static.html / main.js : demonstrate static web page for basic media stream
+- audio-only : local version of WebRTC official "Audio-only peer connection demo" sample (with graph display). 
 
-use http://localhost:8080/static.html to start main demo.
+- audio-nograph : local version of WebRTC official "Audio-only peer connection demo" sample, graphs removed. 
 
-- photobooth.html : demonstrate still video capture of live stream
+- change-codecs : local version of WebRTC official "Choose camera, microphone and speaker" sample.
 
-use http://localhost:8080/photobooth.html to start photobooth demo.
+- input-output : local version of WebRTC official "Change codecs before the call" sample.
 
-- index.html / client.js : demonstrate WebRTC client connection
+- static : static web page of basic media stream demo.
+
+- photobooth : static web page of simple photobooth demo.
+
+- client_old : simple WebRTC peer to peer demo client. (video only)
+
+- client : simple WebRTC peer to peer demo client. (audio only)
+
+all sub directory demo can be used with node.js "static" web service. change current directory to each sub directory and start 
+
+> static -c 0 .
+
+to start web server, then open http://localhost:8080/ by WebRTC enabled Web browser (chrome recommended).
+
+#note 
+
+last 2 demos ("client" and "client_old") requires simple signaling server outside of the browser.
 
 start signaling server by
 
-node signaling.js
+> node signaling.js
 
-in other command prompt window, then start http://localhost:8080/ in 2 Chrome Browser TABs then login using 2 different user names and connect from one to another.
+then open above URL like other demos. You can open 2 browser tabs to access signaling server locally and connect between these 2 tabs.
+Or you can use 2 separate PCs and 1 signaling server in local net. modify one top line of client/client.js like below.
 
-note: in plain HTTP (no HTTPS) there's some limitation accessing camera and audio from "localhost" onky. but no restriction on signaling server so youcan modify signaling server IP address in the top of client.js, while using "static" Web Server on both sid: I.E. copy index.html and client.js for 2 PCs then start signaling.js on either of PCs. You can modify signaling server IP address ob either side but use localhost:8080/ for both side in Chrome browser.
+> var connection = new WebSocket('ws://localhost:8888'),
 
+to
 
+> var connection = new WebSocket('ws://192.168.5.20:8888'),
+
+or other actual signaling server IP address. login using 2 different user name then specify other side username in text field and press "call" button will connect 2 clients.
