@@ -27,9 +27,9 @@ we have several projects in sub directories.
 
 - audio-nograph : local version of WebRTC official "Audio-only peer connection demo" sample, graphs removed. 
 
-- change-codecs : local version of WebRTC official "Choose camera, microphone and speaker" sample.
+- change-codecs : local version of WebRTC official "Change codecs before the call" sample.
 
-- input-output : local version of WebRTC official "Change codecs before the call" sample.
+- input-output : local version of WebRTC official "Choose camera, microphone and speaker" sample.
 
 - static : static web page of basic media stream demo.
 
