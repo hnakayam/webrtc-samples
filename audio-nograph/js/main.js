@@ -104,11 +104,14 @@ function gotStream(stream) {
       const [mimeType, clockRate, sdpFmtpLine] = preferredCodec.value.split(' ');
       const {codecs} = RTCRtpSender.getCapabilities('audio');
       console.log(mimeType, clockRate, sdpFmtpLine);
-      console.log(JSON.stringify(codecs, null, ' '));
+      //console.log(JSON.stringify(codecs, null, ' '));
       const selectedCodecIndex = codecs.findIndex(c => c.mimeType === mimeType && c.clockRate === parseInt(clockRate, 10) && c.sdpFmtpLine === sdpFmtpLine);
       const selectedCodec = codecs[selectedCodecIndex];
       codecs.splice(selectedCodecIndex, 1);
       codecs.unshift(selectedCodec);
+      //codecs.splice(1);   // remove except 1st item
+      // log codec preference
+      console.log(JSON.stringify(codecs, null, ' '));
       const transceiver = pc1.getTransceivers().find(t => t.sender && t.sender.track === localStream.getAudioTracks()[0]);
       transceiver.setCodecPreferences(codecs);
       console.log('Preferred audio codec', selectedCodec);
