@@ -1,5 +1,6 @@
 'use strict';
 
+// use trivial signaling server script, "signaling.js"
 var connection = new WebSocket('ws://localhost:8888'),
     username = "";
 
@@ -12,6 +13,9 @@ var loginPage = document.querySelector('#login-page'),
     hangUpButton = document.querySelector('#hang-up');
 
 callPage.style.display = "none";
+
+// set default username (if any)
+usernameInput.value = username;
 
 // Login when the user clicks the button
 loginButton.addEventListener("click", function (event) {
